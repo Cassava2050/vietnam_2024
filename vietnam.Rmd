@@ -1,0 +1,613 @@
+---
+title: "VIETNAM"
+author: "Valentina Llano"
+date: "2024-12-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(magrittr)
+
+trial_201 <- read_csv("2024201DMEAR_harvest_final.csv")
+trial_202 <- read_csv("2024202DMEAR_table_final.csv")
+trial_203 <- read_csv("2024203DMEPR_tani_final.csv")
+trial_204 <- read_csv("2024204DMEPR_tani_final.csv")
+trial_205 <- read_csv("2024205DMEAR_dona_table_final.csv")
+trial_206 <- read_csv("2024206DMEPR_dona_final.csv")
+trial_207 <- read_csv("2024207DMEAR_HLARC_DONA_HARVESTING_FINAL.csv")
+trial_208 <- read_csv("2024208DMEPR_HLARC_DONA_HARVESTING_FINAL.csv")
+trial_219 <- read_csv("2024219DMEPR_HLARC_chauthanh_final.csv")
+trial_220 <- read_csv("2024220DMEAR_HLARC_chauthanh_final.csv")
+
+```
+```{r}
+
+data <- bind_rows(trial_201, trial_202, trial_203, trial_204, trial_205,
+                     trial_206, trial_207, trial_208, trial_219, trial_220) %>% 
+  select(-c(location2, Column1))
+
+data %<>% mutate(control = coalesce(is_a_control, is_a_check),
+                CMD_1mon = coalesce(CMD_1month, `1M_CMD`),
+                CMD_3mon = coalesce(CMD_3month, `3M_CMD`),
+                CMD_6mon = coalesce(CMD_6month, `6M_CMD`),
+                lodging1_3 = coalesce(lodging, `Logging %`, `Loging %`),
+                plant_type1_5  = coalesce(plant_type, `Plant Type`, Plant_Type),
+                root_shape = coalesce(root_shape, `Root Shape`, Root_shape),
+                root_skin_color1_3 = coalesce(root_skin_color, Root_skin_color),
+                CWBD = coalesce(`#CWBD_plants_6month`, `#CWBD_plants`, CWBD),
+                vigor_1mon = coalesce(`1M_Vigor`, `1M_VIGOR`, VIGOR_1month),
+                vigor_3mon = coalesce(`3M_Vigor`, `3M_VIGOR`, VIGOR_3month),
+                stem_count = coalesce(stem_count, Stem_Count, `Stem Count`),
+                .keep = "unused") 
+
+```
+```{r}
+# select meaningful columns. 
+data_tidy_1 <- data %>% select(-c("#root_rot_plants", "#stem_rot_plant", "CBB_score",  "CWBD",  "Early Bulking",
+                   "fungus", "stem_count", "stem_rot", "Plant_Type2"))
+
+# create trial_name column, transform variable into numeric
+data_tidy_1 <- data_tidy_1 %>% mutate(
+  root_shape = case_when(
+    tolower(root_shape) == "cylindrical" ~ 3,
+    # Replace cylindrical variants with 3
+    tolower(root_shape) == "conical" ~ 1,
+    # Replace conical variants with 1
+    TRUE ~ NA_real_                         # Keep NA for missing values
+  ),
+  trial_name = substr(data_tidy_1$plot_name, 1, 17),
+  root_skin_color1_3 = case_when(
+    tolower(root_skin_color1_3) == "cream" ~ 1,
+    tolower(root_skin_color1_3) == "dark_brown" ~ 3,
+    tolower(root_skin_color1_3) == "brown" ~ 2,
+    root_skin_color1_3 == "Yellow" ~ 1,
+    TRUE ~ NA_real_
+  )
+) 
+
+```
+```{r}
+# calculating yield/ha and starch yield
+# Create a lookup table
+lookup_table <- data.frame(
+trial_name = c(
+  "2024201DMEAR_chau", "2024202DMEAR_tanh", "2024203DMEPR_chau", "2024204DMEPR_tanh",
+  "2024205DMEAR_dona", "2024206DMEPR_dona", "2024207DMEAR_dona", "2024208DMEPR_dona",
+  "2024219DMEPR_chau", "2024220DMEAR_chau"),
+plot_width = c(4, 5.5, 1.6, 1.1, 6, 1.2, 6, 1.2, 2.4, 6),
+plot_length = c(5, 4, 5, 4, 4, 4, 4, 4, 4, 4),
+harvest_number = c(9, 9, 10, 10, 9, 10, 9, 10, 10, 9),
+planted_number_plot = c(25, 25, 10, 10, 25, 10, 25, 10, 10, 25)
+)
+
+lookup_table$area_plant = (lookup_table$plot_length*lookup_table$plot_width)/lookup_table$planted_number_plot
+
+data_tidy_1 <- data_tidy_1 %>%
+  left_join(lookup_table, by = "trial_name")
+
+```
+```{r}
+# saving data
+
+write.csv(data_tidy_1, "archivo_temporal.csv", row.names = FALSE)
+
+
+```
+```{r}
+library(readxl)
+data_tidy_2 <- read_excel("tidy_vietnam_data_2024_thuy.xlsx")
+view(data_tidy_2)
+
+```
+```{r}
+colnames(data_tidy_2)
+
+
+```
+```{r}
+str(data_tidy_2)
+# Convertir columnas específicas a numérico
+data_tidy_2 <- data_tidy_2 %>%
+  mutate(across(c(10:26, 31:33), as.numeric))
+
+```
+
+ 
+
+
+```{r}
+# Definir las variables que deseas incluir en los boxplots
+trait_wanted <- c(
+  "germination_rate", "CMD_harvest", "root_shape", "root_type", 
+  "plot_weight", "starch_content", "percentage_root_rot", 
+  "percentage_lodging", "CMD_1mon", "CMD_3mon", "CMD_6mon", 
+  "lodging1_3", "plant_type1_5", "root_skin_color1_3", 
+  "vigor_1mon", "vigor_3mon", "root_yield", "starch_yield"
+)
+
+# Crear el gráfico de violin con boxplots superpuestos
+plot_bxp <- data_tidy_2 %>%
+  pivot_longer(
+    cols = all_of(trait_wanted),  # Selección dinámica de las columnas especificadas
+    names_to = "var",             # Renombrar las columnas largas
+    values_to = "values"          # Recolectar los valores de las variables
+  ) %>%
+  ggplot(aes(x = trial_name, y = values)) + # Reemplaza 'trial_name' con el nombre correcto si cambia
+  geom_violin(fill = "gray") +              # Agrega violines para distribución
+  geom_boxplot(width = 0.2) +               # Superpone boxplots para ver la mediana y dispersión
+  labs(x = NULL, y = NULL, title = "Distribuciones por Variable y Ensayo") +
+  theme_minimal() +                         # Usa un tema limpio y estético
+  theme(
+    axis.text.x = element_text(size = 8, vjust = 1, angle = 75), # Rota y ajusta etiquetas del eje x
+    axis.text.y = element_text(size = 8),                       # Ajusta tamaño de etiquetas del eje y
+    plot.title = element_text(color = "black", hjust = 0.5),    # Ajusta título del gráfico
+    strip.text.x = element_text(size = 7, face = "bold.italic") # Personaliza las etiquetas de facetas
+  ) +
+  facet_wrap(~var, ncol = 5, scales = "free_y") # Faceta por variable con ejes independientes
+
+# Mostrar el gráfico en la consola
+print(plot_bxp)
+
+# Guardar el gráfico como archivo PNG
+ggsave(
+  filename = paste0("boxplot_fixed_", Sys.Date(), ".png"), 
+  plot = plot_bxp, 
+  units = "in", dpi = 300, width = 14, height = 10         # Ajustar dimensiones y resolución
+)
+
+# Guardar el gráfico como archivo PDF
+ggsave(
+  filename = paste0("boxplot_fixed_", Sys.Date(), ".pdf"), # Nombre dinámico del archivo
+  plot = plot_bxp, 
+  device = "pdf",                                         # Especificar formato PDF
+  units = "in", dpi = 300, width = 14, height = 10        # Ajustar dimensiones y resolución
+)
+
+```
+ 
+
+```{r}
+
+correlation_result <- cor(data_tidy_2$root_yield, data_tidy_2$percentage_root_rot, use = "complete.obs")
+
+
+print(correlation_result)
+
+# plotting scatter plot
+# yield vs root rot
+data_tidy_2 %>% ggplot(aes(x = root_yield, y = percentage_root_rot)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F) +
+  facet_wrap(~trial_name, scales = "free", nrow = 2)
+
+data_tidy_2 %>% ggplot(aes(x = starch_content, y = percentage_root_rot)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F) +
+  facet_wrap(~trial_name, scales = "free", nrow = 2)
+
+data_tidy_2 %>% ggplot(aes(x = starch_yield, y = percentage_root_rot)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F) +
+  facet_wrap(~trial_name, scales = "free", nrow = 2)
+
+
+
+```
+```{r}
+
+model <- lm(percentage_root_rot ~ root_yield, data = data_tidy_2)
+
+
+summary(model)
+
+```
+```{r}
+data_tidy_2 <- data_tidy_2 %>%
+  filter(starch_content <= 200 | is.na(starch_content))
+```
+```{r}
+data_tidy_2 <- data_tidy_2 %>%
+  add_column(block = NA) %>%
+  mutate(block = as.factor(block))
+
+# Ver el resultado
+print(head(data_tidy_2))
+```
+
+
+##single trial
+```{r}
+master_data <- list()
+
+trait_wanted <- c(
+  "germination_rate", "CMD_harvest", "root_shape", "root_type", 
+  "plot_weight", "starch_content", "percentage_root_rot", "root_yield", "starch_yield", 
+  "lodging1_3", "plant_type1_5", "root_skin_color1_3", "percentage_lodging", "vigor_1mon", "vigor_3mon"
+  
+)
+source("https://raw.githubusercontent.com/Cassava2050/PPD/main/utilities_tidy.R")
+
+results <- check_design_met(
+  data = data_tidy_2,
+  genotype = "accession_name",
+  trial = "trial_name",
+  traits = trait_wanted,
+  rep = "rep_number",
+  col = "column_number",
+  row = "row_number",
+  block = "block"
+ 
+ 
+)
+
+plot(results, type = "connectivity")
+
+
+obj <- single_trial_analysis(results = results, progress = TRUE, remove_outliers = FALSE)
+
+trials <- unique(data_tidy_2$trial_name)   
+header_sort = vector()
+i = 1
+
+for (i in 1:length(trials)) {
+  cat("\n_______________")
+  cat("\nTRIAL:", trials[i], "\n")
+  cat("_______________\n")
+  
+  for (j in 1:length(trait_wanted)) {
+    blue_blup <- obj$blues_blups %>% 
+      filter(trial == trials[i]) %>% 
+      select(-c(trial, seBLUEs, seBLUPs, wt)) %>% 
+      pivot_wider(names_from = "trait", values_from = c("BLUEs", "BLUPs"))
+    
+    header_sort = c(header_sort,
+                    grep(trait_wanted[j], sort(names(blue_blup)), value=TRUE))
+    
+    blue_blup <- blue_blup %>% dplyr::select(genotype, any_of(header_sort)) %>% 
+      mutate(across(where(is.double), round, 1))
+  }
+  
+  master_data[[paste0("BLUP_BLUE_", trials[i])]] <- blue_blup
+}
+
+# Guardar en un archivo PDF
+if(TRUE){
+  pdf(paste0("output//", "01_", trials[i], "_spatial_plot_", ".pdf"), width = 8, height = 6)
+  plot(obj, type = "spatial")
+  dev.off()
+}
+
+```
+```{r}
+## Single heritability
+
+single_h2 <- obj$resum_fitted_model[ ,1:3] %>% 
+  group_by(trial) %>%
+  spread(trait, value = heritability) 
+
+master_data[["single_h2"]] <- single_h2 
+
+single_h2 %>% 
+  write.table("clipboard", sep = "\t", col.names = T, row.names = F, na = "")
+
+
+ # Assuming obj$resum_fitted_model is your dataframe and is structured correctly
+H2 <- obj$resum_fitted_model[ ,1:3] %>% 
+  ggplot(aes(x = trait, y = trial, label = heritability, fill = heritability)) +
+  geom_tile(color = "black") +  # This will also avoid drawing borders for NA tiles
+  geom_text(color = "white") +  # Avoids placing text on NA tiles
+  # scale_fill_gradient(low = "white", high = "black", na.value = "red",   # Change 'red' to any color that stands out
+  #                     limits = c(NA, 1), oob = scales::squish) +  # Ensure the full range of 0-1 is used
+  labs(title = "Broad sense heritability", x = "", y = "") +
+  theme_xiaofei() +
+  scale_x_discrete(position = "top") +
+  theme(axis.text.x = element_text(angle = 75, hjust = 0, size = 10),
+        axis.text.y = element_text(size = 13)) 
+
+H2
+
+ggsave(paste0("images\\H2", "Vietnam", "_", ".png"),
+     plot = H2, units = "in", dpi = 300, width = 15, height = 6
+     
+)
+     
+```
+```{r}
+single_CV <- obj$resum_fitted_model[ ,c(1:2, 4)] %>% 
+  group_by(trial) %>%
+  spread(trait, value = CV) %>% 
+  mutate(across(where(is.double), round, 1))
+
+master_data[["single_CV"]] <- single_CV 
+```
+
+## Single variance components
+
+```{r}
+single_var_comp <- obj$resum_fitted_model[ ,c(1:2, 5:6)] %>% 
+  mutate(across(where(is.double), round, 3))
+
+master_data[["single_var_comp"]] <- single_var_comp 
+
+view(single_var_comp)
+```
+
+
+##MTA
+```{r}
+library(asreml)
+trait_ideal <- c(
+  "germination_rate", "CMD_harvest", "root_shape", "root_type", 
+  "plot_weight", "starch_content", "percentage_root_rot", "root_yield", "starch_yield", 
+  "lodging1_3", "plant_type1_5", "root_skin_color1_3", "percentage_lodging", "vigor_1mon", "vigor_3mon"
+  
+)
+
+
+results <- check_design_met(
+  data = data_tidy_2,
+  genotype = "accession_name",
+  trial = "trial_name",
+  traits = trait_ideal,
+  rep = "rep_number",
+  col = "column_number",
+  row = "row_number",
+  block = "block"
+)
+
+
+obj <- single_trial_analysis(results = results,
+                             progress = TRUE,
+                             remove_outliers = FALSE)
+
+
+# several trials
+met_results <- met_analysis(obj, 
+                            filter_traits = 
+                              trait_ideal[!trait_ideal %in% c("percentage_lodging"
+                                                              )],
+                            h2_filter = 0.1,
+                            progress = TRUE
+                            )
+
+
+# h2 gxe
+master_data[["h2_gxe"]] <- 
+  met_results$heritability %>% 
+  arrange(desc(h2)) %>%
+  mutate(across(where(is.numeric), round, 2))
+
+master_data$h2_gxe %>%
+  write.table("clipboard", col.names = T, row.names = F, sep = "\t")
+
+# BLUPs gxe
+BLUPs_table <- 
+  met_results$overall_BLUPs %>% 
+  select(-c(std.error, status)) %>% 
+  group_by(genotype) %>% 
+  spread(trait, value = predicted.value) %>% 
+  rename("accession_name" = genotype) %>% 
+  mutate(across(where(is.numeric), round, 2)) %>% 
+  ungroup() 
+
+#save the BLUPs data
+master_data[[paste0("BLUPs_", "gxe")]] <- BLUPs_table
+ 
+ 
+
+ 
+
+
+
+```
+## Genotypic Correlation: Locations
+
+
+```{r}
+# Define a function to create plots and save them
+plot_and_save <- function(trait, file_name, met_results) {
+  covcor_heat(matrix = met_results$VCOV[[trait]]$CORR, size = 4, legend = c(0.35, 0.8)) +
+    theme(axis.text.y = element_text(size = 14),
+          axis.text.x = element_text(size = 14))
+  
+  # Construct file path using the file_name and trial_interest
+  file_path <- paste0("images\\", file_name, "_vcor", ".png")
+  
+  # Save the plot
+  ggsave(file_path, units = "in", dpi = 300, width = 8, height = 6)
+}
+
+# List of traits to plot
+traits <- colnames(BLUPs_table)[!colnames(BLUPs_table) %in% c("accession_name"
+                                                            
+                                                              )]
+
+# Iterate over each trait and apply the function
+for (trait in traits) {
+  plot_and_save(trait, trait, met_results)
+}
+
+
+
+
+```
+## Save the BLUEs or raw data across the trials
+```{r}
+variables <- colnames(BLUPs_table)[!grepl("accession_name", colnames(BLUPs_table))]
+for (var in variables) {
+  
+  cat("\n_______________")
+  cat("\nTRIAL:", var, "\n")
+  cat("_______________\n")
+  
+  blue_blup <-
+  obj$blues_blups %>%
+  select(trial, genotype, trait, BLUEs) %>%
+  spread(trait, value = BLUEs) %>%
+  select(trial, genotype, any_of(var)) %>%
+  group_by(trial, genotype) %>%
+  pivot_wider(names_from = trial, values_from = any_of(var)) %>%
+  right_join(BLUPs_table %>%
+    select(accession_name, any_of(var)), by = c("genotype" = "accession_name")) %>%
+  arrange(is.na(across(where(is.numeric))), across(where(is.numeric))) %>%
+  mutate(across(where(is.numeric), round, 2))
+# remove all NA columns
+blue_blup <- blue_blup[, colSums(is.na(blue_blup)) < nrow(blue_blup)]
+
+master_data[[paste0("BLUP_BLUE_", var)]] <- blue_blup
+}
+```
+## Stability analysis
+```{r}
+for (var in variables) {
+  
+  cat("\n_______________")
+  cat("\nTRIAL:", var, "\n")
+  cat("_______________\n")
+
+stab <- met_results$stability %>% 
+  filter(trait == var) %>% 
+  arrange(superiority) %>% 
+        pivot_wider(names_from = "trait", values_from = c('predicted.value')) 
+
+# Change colname
+colnames(stab)[5] <- paste('BLUPs', colnames(stab)[5], sep = '_') 
+colnames(stab)[c(2, 3, 4)] <- paste(colnames(stab)[c(2, 3, 4)], var, sep = '_') 
+
+master_data[[paste0("stability_", var)]] <- stab
+}
+
+
+ind <- grep("^stability_", names(master_data))
+
+
+# select elements that satisfy the condition
+stab_values <- master_data[ind] %>% 
+  reduce(inner_join, by = "genotype") %>% 
+  select(!starts_with("BLUPs_")) %>% 
+  mutate(across(where(is.numeric), round, 2))
+
+# remove multiple stability sheets
+master_data[ind] <- NULL
+```
+## BLUE and BLUP data together
+```{r}
+BLUEs_BLUPs <- 
+  obj$blues_blups %>%
+  select(trait, genotype, trial, BLUEs, seBLUEs) %>%
+  filter(trait %in% variables) %>% 
+  pivot_wider(names_from = "trait", values_from = c("BLUEs", "seBLUEs")) %>%
+  pivot_wider(names_from = trial, values_from = c(
+    paste("BLUEs", variables, sep = "_"),
+    paste("seBLUEs", variables, sep = "_")
+  )) %>%
+  left_join(
+    met_results$overall_BLUPs %>%
+      select(!status) %>%
+      rename(
+        BLUPs = predicted.value,
+        seBLUPs = std.error
+      ) %>%
+      pivot_wider(names_from = "trait", values_from = c("BLUPs", "seBLUPs")),
+    by = "genotype"
+  ) 
+   
+# remove all NA columns
+  BLUEs_BLUPs <- BLUEs_BLUPs[, colSums(is.na(BLUEs_BLUPs)) < nrow(BLUEs_BLUPs)]
+
+
+# put all together stab_values with blues_blups
+BLUEs_BLUPs <- 
+  BLUEs_BLUPs %>% left_join(stab_values, by = 'genotype')  
+  
+    
+header_sort = vector()
+for (i in 1:length(variables)) {
+  
+  header_sort = c(header_sort, 
+                  grep(variables[i], sort(names(BLUEs_BLUPs)), value=TRUE) 
+  )
+  
+}
+
+BLUEs_BLUPs <- BLUEs_BLUPs %>%
+  select(genotype, all_of(header_sort), -starts_with("se")) 
+
+master_data[["BLUEs_BLUPs_VIET"]] = BLUEs_BLUPs
+
+
+```
+## Genotypic correlation
+```{r}
+geno_cor <- gg_cor(
+  colours = c("red", "white", "blue"),
+  data = BLUPs_table,  
+  label_size = 3
+) + 
+  theme(
+  axis.text.y = element_text(size = 14),
+  axis.text.x = element_text(size = 14))
+
+
+ggsave(paste("images\\geno_corr", ".png", sep = "_"),
+       units = "in", dpi = 300, width = 14, height = 8)
+```
+## Save the master data results
+```{r}
+
+folder_output <- "D:/OneDrive - CGIAR/Documents/VIETNAM/output/"
+
+ 
+
+# Construye el nombre del archivo dinámico
+meta_file_name <- paste0(folder_output, paste("2024", "master_results", Sys.Date(), ".xlsx", sep = "_"))
+
+# Guarda los datos en un archivo Excel
+tryCatch({
+    openxlsx::write.xlsx(master_data, file = meta_file_name)
+    message("Archivo guardado exitosamente en: ", meta_file_name)
+}, error = function(e) {
+    message("Error al guardar el archivo: ", e$message)
+})
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+```{r}
+ 
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

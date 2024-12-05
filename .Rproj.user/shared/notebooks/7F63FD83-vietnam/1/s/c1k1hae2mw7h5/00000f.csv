@@ -1,0 +1,5 @@
+"0","# saving data"
+"0",""
+"0","write.csv(data_tidy_1, ""archivo_temporal.csv"", row.names = FALSE)"
+"0",""
+"0",""

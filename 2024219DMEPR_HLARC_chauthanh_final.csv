@@ -1,0 +1,109 @@
+﻿plot_name,accession_name,female_parents,male_parents,location,location2,plot_number,row_number,column_number,rep_number,is_a_check,germination_rate, CMD_1month , CMD_3month , CMD_6month ,CMD_harvest,plant_type,stem_count,root_shape,root_type,root_skin_color,plot_weight, starch_content ,percentage_root_rot
+2024219DMEPR_chauthanh_rep1_HLH22-0373_1,HLH22-0373,HL-S12,NA,chauthanh,chauthanh,1,1,1,1,0,1, 1.0 , 1.0 , 1.0 ,1,3,16,cylindrical,2,cream,1, 21.08 ,14
+2024219DMEPR_chauthanh_rep1_KM505_2,KM505,SM937-26,NA,chauthanh,chauthanh,2,2,1,1,1,0.9, 2.3 , 3.0 , 2.7 ,3,2,6,cylindrical,1,dark_brown,5.6, 24.07 ,9
+2024219DMEPR_chauthanh_rep1_HLH22-0055_3,HLH22-0055,KU50,NA,chauthanh,chauthanh,3,3,1,1,0,1, 1.0 , 1.0 , 1.8 ,2,2,24,cylindrical,2,cream,3.6, 15.65 ,0
+2024219DMEPR_chauthanh_rep1_HLF22-0292_4,HLF22-0292,HL-S14,IBA980581,chauthanh,chauthanh,4,4,1,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,19,conical,2,cream,4.8, 13.70 ,0
+2024219DMEPR_chauthanh_rep1_HLF22-0297_5,HLF22-0297,HL-S14,IBA980581,chauthanh,chauthanh,5,5,1,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,15,cylindrical,2,cream,6.8, 13.30 ,0
+2024219DMEPR_chauthanh_rep1_HLH22-0612_6,HLH22-0612,TMEB419,NA,chauthanh,chauthanh,6,6,1,1,0,0.8, 1.0 , 1.0 , 1.0 ,1,3,2,NA,NA,NA,0, NA ,2
+2024219DMEPR_chauthanh_rep1_HLF22-0208_7,HLF22-0208,HL-S11,IBA980581,chauthanh,chauthanh,7,6,2,1,0,0.9, 1.0 , 1.0 , 1.0 ,1,2,15,cylindrical,1,cream,6, 15.71 ,8
+2024219DMEPR_chauthanh_rep1_HLF22-0047_8,HLF22-0047,TMEB419,KU50,chauthanh,chauthanh,8,5,2,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,10,cylindrical,2,brown,1.2, 16.91 ,11
+2024219DMEPR_chauthanh_rep1_HLF22-0249_9,HLF22-0249,HL-S11,IBA980581,chauthanh,chauthanh,9,4,2,1,0,0.9, 1.0 , 1.0 , 1.0 ,1,3,5,conical,3,cream,1, 18.92 ,7
+2024219DMEPR_chauthanh_rep1_HLF22-0032_10,HLF22-0032,TMEB419,HL-S11,chauthanh,chauthanh,10,3,2,1,0,0.8, 2.0 , 1.0 , 1.0 ,1,2,8,NA,NA,NA,0.4, NA ,20
+2024219DMEPR_chauthanh_rep1_HLH22-0615_11,HLH22-0615,TMEB419,NA,chauthanh,chauthanh,11,2,2,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,20,cylindrical,1,cream,5.6, 22.30 ,19
+2024219DMEPR_chauthanh_rep1_HLF22-0103_12,HLF22-0103,KM140,TMEB419,chauthanh,chauthanh,12,1,2,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,15,cylindrical,2,cream,5.6, 19.04 ,11
+2024219DMEPR_chauthanh_rep1_HLF22-0129_13,HLF22-0129,Rayong 11,AR35-1,chauthanh,chauthanh,13,1,3,1,0,0.7, 1.0 , 1.0 , 1.0 ,1,3,5,conical,3,brown,2, 17.02 ,15
+2024219DMEPR_chauthanh_rep1_HLF22-0121_14,HLF22-0121,KM419,TMEB419,chauthanh,chauthanh,14,2,3,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,19,cylindrical,1,cream,7, 21.86 ,14
+2024219DMEPR_chauthanh_rep1_HLH22-0259_15,HLH22-0259,CR24-16,NA,chauthanh,chauthanh,15,3,3,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,9,cylindrical,2,cream,1.2, 16.09 ,15
+2024219DMEPR_chauthanh_rep1_HLF22-0142_16,HLF22-0142,Rayong 11,IBA972205,chauthanh,chauthanh,16,4,3,1,0,0.7, 1.0 , 1.0 , 1.0 ,1,2,5,conical,2,cream,2, 11.31 ,8
+2024219DMEPR_chauthanh_rep1_CR24-16_17,CR24-16,NA,NA,chauthanh,chauthanh,17,5,3,1,1,0.8, 1.0 , 1.0 , 1.0 ,1,3,7,cylindrical,1,dark_brown,3.4, 17.37 ,24
+2024219DMEPR_chauthanh_rep1_HLF22-0136_18,HLF22-0136,Rayong 11,IBA972205,chauthanh,chauthanh,18,6,3,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,18,cylindrical,1,dark_brown,11, 15.50 ,23
+2024219DMEPR_chauthanh_rep1_HLH22-0069_19,HLH22-0069,KU50,NA,chauthanh,chauthanh,19,6,4,1,0,1, 1.4 , 3.0 , 3.4 ,6,2,11,cylindrical,1,cream,8, 20.00 ,17
+2024219DMEPR_chauthanh_rep1_HLH22-0394_20,HLH22-0394,TMEB419,NA,chauthanh,chauthanh,20,5,4,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,6,NA,NA,NA,0, NA ,14
+2024219DMEPR_chauthanh_rep1_HLH22-0296_21,HLH22-0296,CR24-16,NA,chauthanh,chauthanh,21,4,4,1,0,0.9, 1.0 , 1.0 , 1.0 ,1,3,2,NA,NA,NA,0, NA ,7
+2024219DMEPR_chauthanh_rep1_HLH22-0268_22,HLH22-0268,CR24-16,NA,chauthanh,chauthanh,22,3,4,1,0,1, 1.2 , 1.0 , 2.0 ,1,3,4,cylindrical,1,brown,3, 17.02 ,23
+2024219DMEPR_chauthanh_rep1_HLF22-0221_23,HLF22-0221,HL-S11,IBA980581,chauthanh,chauthanh,23,2,4,1,0,0.9, 1.0 , 1.0 , 1.0 ,1,2,8,NA,NA,NA,0, NA ,18
+2024219DMEPR_chauthanh_rep1_HLF22-0153_24,HLF22-0153,Rayong 11,IBA980581,chauthanh,chauthanh,24,1,4,1,0,0.8, 1.0 , 1.0 , 1.0 ,1,3,9,NA,NA,NA,0, NA ,21
+2024219DMEPR_chauthanh_rep1_HLF22-0040_25,HLF22-0040,TMEB419,HL-S14,chauthanh,chauthanh,25,1,5,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,13,NA,NA,NA,0, NA ,7
+2024219DMEPR_chauthanh_rep1_HLF22-0133_26,HLF22-0133,Rayong 11,AR35-1,chauthanh,chauthanh,26,2,5,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,17,conical,2,dark_brown,1.6, 15.05 ,13
+2024219DMEPR_chauthanh_rep1_HLH22-0312_27,HLH22-0312,CR24-16,NA,chauthanh,chauthanh,27,3,5,1,0,1, 1.0 , 1.0 , 1.0 ,1,3,20,NA,NA,NA,1.6, 14.87 ,12
+2024219DMEPR_chauthanh_rep1_IBA980581_28,IBA980581,#N/A,#N/A,chauthanh,chauthanh,28,4,5,1,1,1, 1.0 , 1.0 , 1.0 ,1,4,0,NA,NA,NA,0, NA ,19
+2024219DMEPR_chauthanh_rep1_HLF22-0139_29,HLF22-0139,Rayong 11,IBA972205,chauthanh,chauthanh,29,5,5,1,0,1, 1.0 , 1.0 , 2.0 ,1,1,4,NA,NA,NA,0, NA ,19
+2024219DMEPR_chauthanh_rep1_HLH22-0419_30,HLH22-0419,VN19-3113,NA,chauthanh,chauthanh,30,6,5,1,0,0.9, 1.6 , 2.0 , 2.0 ,3,2,5,NA,NA,NA,0, NA ,10
+2024219DMEPR_chauthanh_rep1_HLH22-0454_31,HLH22-0454,VN19-773,NA,chauthanh,chauthanh,31,6,6,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,5,cylindrical,3,brown,2, 12.88 ,19
+2024219DMEPR_chauthanh_rep1_HLH22-0010_32,HLH22-0010,KU50,NA,chauthanh,chauthanh,32,5,6,1,0,1, 1.0 , 2.0 , 2.0 ,2,3,2,cylindrical,2,brown,0, NA ,14
+2024219DMEPR_chauthanh_rep1_HLF22-0176_33,HLF22-0176,HL-S11,IBA980581,chauthanh,chauthanh,33,4,6,1,0,1, 1.2 , 2.0 , 2.0 ,1,2,6,conical,2,brown,0, NA ,17
+2024219DMEPR_chauthanh_rep1_HLF22-0197_34,HLF22-0197,HL-S11,IBA980581,chauthanh,chauthanh,34,3,6,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,16,cylindrical,2,brown,1.6, 1.74 ,24
+2024219DMEPR_chauthanh_rep1_HLH22-0354_35,HLH22-0354,IBA972205,NA,chauthanh,chauthanh,35,2,6,1,0,0.9, 2.6 , 3.0 , 2.0 ,1,3,15,cylindrical,2,cream,0.8, NA ,5
+2024219DMEPR_chauthanh_rep1_HLF22-0031_36,HLF22-0031,TMEB419,HL-S11,chauthanh,chauthanh,36,1,6,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,2,NA,NA,NA,0, NA ,25
+2024219DMEPR_chauthanh_rep1_HLF22-0137_37,HLF22-0137,Rayong 11,IBA972205,chauthanh,chauthanh,37,1,7,1,0,0.5, 1.0 , 1.0 , 1.0 ,1,2,11,conical,2,dark_brown,4.8, 14.64 ,19
+2024219DMEPR_chauthanh_rep1_HLF22-0048_38,HLF22-0048,TMEB419,KU50,chauthanh,chauthanh,38,2,7,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,16,conical,2,brown,1.4, 10.68 ,
+2024219DMEPR_chauthanh_rep1_HLF22-0213_39,HLF22-0213,HL-S11,IBA980581,chauthanh,chauthanh,39,3,7,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,24,conical,2,brown,2.4, 283.64 ,25
+2024219DMEPR_chauthanh_rep1_HLH22-0623_40,HLH22-0623,VN19-773,NA,chauthanh,chauthanh,40,4,7,1,0,1, 1.7 , 3.0 , 2.0 ,3,2,,NA,NA,NA,0, NA ,20
+2024219DMEPR_chauthanh_rep1_HLF22-0237_41,HLF22-0237,HL-S11,IBA980581,chauthanh,chauthanh,41,5,7,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,3,conical,2,dark_brown,2.4, 10.92 ,18
+2024219DMEPR_chauthanh_rep1_KU50_42,KU50,NA,NA,chauthanh,chauthanh,42,6,7,1,1,1, 1.3 , 2.0 , 2.0 ,3,3,,conical,1,cream,6.2, 19.39 ,23
+2024219DMEPR_chauthanh_rep1_HLF22-0183_43,HLF22-0183,HL-S11,IBA980581,chauthanh,chauthanh,43,6,8,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,14,cylindrical,2,brown,22.8, 16.90 ,
+2024219DMEPR_chauthanh_rep1_HLF22-0278_44,HLF22-0278,HL-S12,TMEB419,chauthanh,chauthanh,44,5,8,1,0,0.9, 1.0 , 1.0 , 1.0 ,1,2,5,NA,NA,NA,0, NA ,18
+2024219DMEPR_chauthanh_rep1_HLH22-0358_45,HLH22-0358,IBA972205,NA,chauthanh,chauthanh,45,4,8,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,16,cylindrical,3,brown,1.2, 12.35 ,19
+2024219DMEPR_chauthanh_rep1_HLF22-0146_46,HLF22-0146,Rayong 11,IBA980581,chauthanh,chauthanh,46,3,8,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,10,conical,3,dark_brown,0, NA ,12
+2024219DMEPR_chauthanh_rep1_HLF22-0052_47,HLF22-0052,TMEB419,KU50,chauthanh,chauthanh,47,2,8,1,0,0.9, 1.0 , 1.0 , 1.0 ,1,1,14,cylindrical,1,brown,8.2, 20.00 ,16
+2024219DMEPR_chauthanh_rep1_TMEB419_48,TMEB419,NA,NA,chauthanh,chauthanh,48,1,8,1,1,0.9, 1.0 , 1.0 , 1.0 ,1,1,12,conical,2,dark_brown,3, 15.16 ,
+2024219DMEPR_chauthanh_rep1_HLH22-0476_49,HLH22-0476,#N/A,#N/A,chauthanh,chauthanh,49,1,9,1,0,1, 1.7 , 3.0 , 2.0 ,3,3,5,conical,2,cream,11, NA ,16
+2024219DMEPR_chauthanh_rep1_HLF22-0105_50,HLF22-0105,KM140,TMEB419,chauthanh,chauthanh,50,2,9,1,0,0.7, 1.0 , 1.0 , 1.0 ,1,2,6,cylindrical,1,cream,3, 18.40 ,19
+2024219DMEPR_chauthanh_rep1_HLH22-0254_51,HLH22-0254,CR24-16,NA,chauthanh,chauthanh,51,3,9,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,20,conical,2,brown,4, 18.61 ,17
+2024219DMEPR_chauthanh_rep1_HLF22-0132_52,HLF22-0132,Rayong 11,AR35-1,chauthanh,chauthanh,52,4,9,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,4,NA,NA,NA,0, NA ,16
+2024219DMEPR_chauthanh_rep1_HLH22-0070_53,HLH22-0070,KU50,NA,chauthanh,chauthanh,53,5,9,1,0,1, 1.0 , 1.0 , 1.0 ,1,2,4,NA,NA,NA,0, NA ,19
+2024219DMEPR_chauthanh_rep1_HLF22-0296_54,HLF22-0296,HL-S14,IBA980581,chauthanh,chauthanh,54,6,9,1,0,1, 1.0 , 1.0 , 1.0 ,1,1,20,conical,2,cream,11.8, 12.20 ,23
+2024219DMEPR_chauthanh_rep2_HLH22-0268_55,HLH22-0268,CR24-16,NA,chauthanh,chauthanh,55,6,10,2,0,0.9, 1.0 , 1.0 , 2.3 ,3,3,,conical,3,dark_brown,1.8, 17.07 ,17
+2024219DMEPR_chauthanh_rep2_HLF22-0121_56,HLF22-0121,KM419,TMEB419,chauthanh,chauthanh,56,5,10,2,0,1, 1.0 , 1.0 , 1.0 ,1,1,17,conical,2,cream,0, NA ,23
+2024219DMEPR_chauthanh_rep2_HLF22-0146_57,HLF22-0146,Rayong 11,IBA980581,chauthanh,chauthanh,57,4,10,2,0,0.8, 1.0 , 1.0 , 1.0 ,1,2,4,cylindrical,2,dark_brown,0, NA ,17
+2024219DMEPR_chauthanh_rep2_HLF22-0297_58,HLF22-0297,HL-S14,IBA980581,chauthanh,chauthanh,58,3,10,2,0,1, 1.0 , 1.0 , 1.0 ,1,1,14,conical,2,cream,2, 14.01 ,8
+2024219DMEPR_chauthanh_rep2_HLF22-0047_59,HLF22-0047,TMEB419,KU50,chauthanh,chauthanh,59,2,10,2,0,1, 1.0 , 1.0 , 1.0 ,1,1,19,conical,2,dark_brown,10.2, 25.50 ,14
+2024219DMEPR_chauthanh_rep2_HLH22-0010_60,HLH22-0010,KU50,NA,chauthanh,chauthanh,60,1,10,2,0,0.9, 1.1 , 2.0 , 3.0 ,3,2,8,conical,2,cream,17, 21.60 ,20
+2024219DMEPR_chauthanh_rep2_HLF22-0105_61,HLF22-0105,KM140,TMEB419,chauthanh,chauthanh,61,1,11,2,0,0.2, 1.0 , 1.0 , 1.0 ,1,4,1,conical,3,brown,0, NA ,
+2024219DMEPR_chauthanh_rep2_HLF22-0183_62,HLF22-0183,HL-S11,IBA980581,chauthanh,chauthanh,62,2,11,2,0,1, 1.0 , 1.0 , 1.0 ,1,2,15,cylindrical,1,brown,13.8, 18.50 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0040_63,HLF22-0040,TMEB419,HL-S14,chauthanh,chauthanh,63,3,11,2,0,1, 1.0 , 1.0 , 1.0 ,1,1,27,conical,2,brown,2.4, 21.08 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0153_64,HLF22-0153,Rayong 11,IBA980581,chauthanh,chauthanh,64,4,11,2,0,0.7, 1.0 , 1.0 , 1.0 ,1,1,5,NA,NA,NA,0, NA ,
+2024219DMEPR_chauthanh_rep2_HLF22-0176_65,HLF22-0176,HL-S11,IBA980581,chauthanh,chauthanh,65,5,11,2,0,1, 1.0 , 2.0 , 1.0 ,3,2,8,cylindrical,3,brown,3.4, 15.50 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0292_66,HLF22-0292,HL-S14,IBA980581,chauthanh,chauthanh,66,6,11,2,0,1, 1.0 , 1.0 , 1.0 ,1,3,15,conical,2,cream,1.6, 6.90 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0031_67,HLF22-0031,TMEB419,HL-S11,chauthanh,chauthanh,67,6,12,2,0,0.7, 1.0 , 1.0 , 1.0 ,1,2,5,cylindrical,1,dark_brown,2.2, 19.98 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0133_68,HLF22-0133,Rayong 11,AR35-1,chauthanh,chauthanh,68,5,12,2,0,1, 1.0 , 1.0 , 1.0 ,1,3,12,conical,3,dark_brown,3.4, 17.12 ,
+2024219DMEPR_chauthanh_rep2_CR24-16_69,CR24-16,NA,NA,chauthanh,chauthanh,69,4,12,2,1,0.8, 1.0 , 1.0 , 1.0 ,1,3,8,cylindrical,2,brown,3, 24.15 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0132_70,HLF22-0132,Rayong 11,AR35-1,chauthanh,chauthanh,70,3,12,2,0,1, 1.0 , 1.0 , 1.0 ,1,2,5,conical,3,brown,2, 16.79 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0296_71,HLH22-0296,CR24-16,NA,chauthanh,chauthanh,71,2,12,2,0,0.7, 1.0 , 1.0 , 1.0 ,1,3,3,cylindrical,3,dark_brown,1.2, 22.04 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0197_72,HLF22-0197,HL-S11,IBA980581,chauthanh,chauthanh,72,1,12,2,0,1, 1.0 , 1.0 , 1.0 ,1,4,10,conical,1,dark_brown,5.8, 13.10 ,
+2024219DMEPR_chauthanh_rep2_KU50_73,KU50,NA,NA,chauthanh,chauthanh,73,1,13,2,1,1, 1.2 , 3.0 , 3.0 ,3,3,,NA,3,dark_brown,2, 16.91 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0208_74,HLF22-0208,HL-S11,IBA980581,chauthanh,chauthanh,74,2,13,2,0,0.6, 1.0 , 1.0 , 1.6 ,2,2,5,cylindrical,2,brown,6.4, 14.00 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0137_75,HLF22-0137,Rayong 11,IBA972205,chauthanh,chauthanh,75,3,13,2,0,0.6, 1.0 , 1.0 , 1.0 ,1,3,9,cylindrical,2,dark_brown,5.4, 18.12 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0259_76,HLH22-0259,CR24-16,NA,chauthanh,chauthanh,76,4,13,2,0,1, 1.0 , 1.0 , 1.0 ,1,3,11,NA,NA,brown,0.6, 36.76 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0419_77,HLH22-0419,VN19-3113,NA,chauthanh,chauthanh,77,5,13,2,0,1, 1.3 , 3.0 , 3.0 ,3,2,6,NA,NA,cream,0.8, 21.08 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0055_78,HLH22-0055,KU50,NA,chauthanh,chauthanh,78,6,13,2,0,0.8, 1.0 , 1.0 , 3.0 ,3,2,10,conical,1,cream,8, 15.70 ,
+2024219DMEPR_chauthanh_rep2_TMEB419_79,TMEB419,NA,NA,chauthanh,chauthanh,79,6,14,2,1,1, 1.0 , 1.0 , 1.0 ,1,1,10,cylindrical,1,dark_brown,7,NA,
+2024219DMEPR_chauthanh_rep2_HLF22-0048_80,HLF22-0048,TMEB419,KU50,chauthanh,chauthanh,80,5,14,2,0,1, 1.0 , 1.0 , 1.0 ,1,2,1,NA,NA,cream,0.2, 13.57 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0312_81,HLH22-0312,CR24-16,NA,chauthanh,chauthanh,81,4,14,2,0,0.9, 1.0 , 1.0 , 1.0 ,1,4,2,conical,3,dark_brown,1.2, 11.89 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0103_82,HLF22-0103,KM140,TMEB419,chauthanh,chauthanh,82,3,14,2,0,0.9, 1.0 , 1.0 , 1.0 ,1,1,14,conical,2,cream,12.8, 17.20 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0129_83,HLF22-0129,Rayong 11,AR35-1,chauthanh,chauthanh,83,2,14,2,0,0.7, 1.0 , 1.0 , 1.0 ,1,2,8,conical,3,dark_brown,6.8, 16.60 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0296_84,HLF22-0296,HL-S14,IBA980581,chauthanh,chauthanh,84,1,14,2,0,0.7, 1.0 , 1.0 , 1.0 ,1,3,10,conical,2,cream,11.4, NA ,
+2024219DMEPR_chauthanh_rep2_HLH22-0070_85,HLH22-0070,KU50,NA,chauthanh,chauthanh,85,1,15,2,0,1, 1.0 , 1.0 , 2.0 ,1,4,21,conical,2,cream,7, 13.95 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0237_86,HLF22-0237,HL-S11,IBA980581,chauthanh,chauthanh,86,2,15,2,0,0.9, 1.0 , 1.0 , 1.0 ,4,4,11,conical,1,brown,8.6, 10.00 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0612_87,HLH22-0612,TMEB419,NA,chauthanh,chauthanh,87,3,15,2,0,0.6, 1.0 , 1.0 , 1.0 ,1,1,13,cylindrical,1,cream,8.8, 19.00 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0139_88,HLF22-0139,Rayong 11,IBA972205,chauthanh,chauthanh,88,4,15,2,0,1, 1.0 , 3.0 , 1.0 ,1,2,20,conical,1,brown,9.8, 10.80 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0221_89,HLF22-0221,HL-S11,IBA980581,chauthanh,chauthanh,89,5,15,2,0,1, 1.0 , 1.0 , 1.0 ,1,3,9,cylindrical,1,dark_brown,7.6, NA ,
+2024219DMEPR_chauthanh_rep2_HLH22-0354_90,HLH22-0354,IBA972205,NA,chauthanh,chauthanh,90,6,15,2,0,0.8, 2.3 , 3.0 , 3.0 ,3,3,14,conical,2,cream,14, 17.10 ,
+2024219DMEPR_chauthanh_rep2_KM505_91,KM505,SM937-26,NA,chauthanh,chauthanh,91,6,16,2,1,0.8, 2.5 , 3.0 , 4.0 ,3,2,,conical,2,dark_brown,9.2, 24.50 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0249_92,HLF22-0249,HL-S11,IBA980581,chauthanh,chauthanh,92,5,16,2,0,0.7, 1.0 , 1.0 , 1.0 ,1,2,7,conical,2,cream,7.8, 16.30 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0136_93,HLF22-0136,Rayong 11,IBA972205,chauthanh,chauthanh,93,4,16,2,0,0.9, 1.0 , 1.0 , 1.0 ,1,2,11,conical,2,dark_brown,8, 14.90 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0476_94,HLH22-0476,NA,NA,chauthanh,chauthanh,94,3,16,2,0,1, 1.5 , 2.0 , 3.0 ,3,2,5,conical,2,cream,7.4, 17.00 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0278_95,HLF22-0278,HL-S12,TMEB419,chauthanh,chauthanh,95,2,16,2,0,0.8, 1.0 , 1.0 , 1.0 ,1,3,9,conical,3,cream,2, 21.08 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0032_96,HLF22-0032,TMEB419,HL-S11,chauthanh,chauthanh,96,1,16,2,0,0.9, 1.0 , 1.0 , 1.0 ,1,2,14,conical,3,cream,1.6, 16.91 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0213_97,HLF22-0213,HL-S11,IBA980581,chauthanh,chauthanh,97,1,17,2,0,1, 1.0 , 1.0 , 1.0 ,1,2,17,conical,2,brown,7, 15.09 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0069_98,HLH22-0069,KU50,NA,chauthanh,chauthanh,98,2,17,2,0,1, 2.6 , 3.0 , 4.0 ,3,2,10,conical,2,cream,11.8, 18.00 ,
+2024219DMEPR_chauthanh_rep2_IBA980581_99,IBA980581,NA,NA,chauthanh,chauthanh,99,3,17,2,1,0.9, 1.0 , 1.0 , 1.0 ,1,3,6,conical,2,cream,7, 11.86 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0454_100,HLH22-0454,VN19-773,NA,chauthanh,chauthanh,100,4,17,2,0,0.9, 1.0 , 1.0 , 1.0 ,1,2,14,cylindrical,2,brown,4.2, 12.88 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0373_101,HLH22-0373,HL-S12,NA,chauthanh,chauthanh,101,5,17,2,0,1, 1.0 , 1.0 , 1.0 ,1,3,15,cylindrical,2,cream,4.4, 17.42 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0358_102,HLH22-0358,IBA972205,NA,chauthanh,chauthanh,102,6,17,2,0,1, 1.0 , 1.0 , 1.0 ,1,1,18,cylindrical,1,brown,10.4, 14.70 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0623_103,HLH22-0623,VN19-773,NA,chauthanh,chauthanh,103,6,18,2,0,1, 1.1 , 1.0 , 4.0 ,3,2,,cylindrical,2,brown,8, 24.40 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0615_104,HLH22-0615,TMEB419,NA,chauthanh,chauthanh,104,5,18,2,0,1, 1.0 , 1.0 , 1.0 ,1,2,16,conical,2,brown,11.2, 20.50 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0052_105,HLF22-0052,TMEB419,KU50,chauthanh,chauthanh,105,4,18,2,0,0.9, 1.0 , 1.0 , 1.0 ,4,1,13,conical,1,dark_brown,5.2, 16.34 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0394_106,HLH22-0394,TMEB419,NA,chauthanh,chauthanh,106,3,18,2,0,1, 1.0 , 1.0 , 1.0 ,1,4,18,conical,3,brown,6.2, 19.50 ,
+2024219DMEPR_chauthanh_rep2_HLH22-0254_107,HLH22-0254,CR24-16,NA,chauthanh,chauthanh,107,2,18,2,0,1, 1.0 , 1.0 , 1.0 ,1,2,12,cylindrical,2,brown,19.8, 20.50 ,
+2024219DMEPR_chauthanh_rep2_HLF22-0142_108,HLF22-0142,Rayong 11,IBA972205,chauthanh,chauthanh,108,1,18,2,0,0.8, 1.0 , 1.0 , 1.0 ,1,3,10,conical,3,brown,6, NA ,
